@@ -1,0 +1,29 @@
+.main {
+  min-height: 100vh;
+  padding-bottom: var(--space-3xl);
+}
+
+.header {
+  padding-top: var(--space-lg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.footerNote {
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
