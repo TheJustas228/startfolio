@@ -1,0 +1,40 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.baseGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 40%, rgba(61, 1, 188, 0.2) 0%, transparent 55%),
+    linear-gradient(180deg, #08051A 0%, #0B0520 25%, #0F044A 55%, #0B0520 85%, #060218 100%);
+}
+
+/* Horizontal soft purple glow band — lower middle (crypto-style reference) */
+.glowBand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 25%;
+  height: 35%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(106, 53, 255, 0.06) 25%,
+    rgba(154, 18, 202, 0.12) 50%,
+    rgba(106, 53, 255, 0.06) 75%,
+    transparent 100%
+  );
+  filter: blur(40px);
+}
+
+.starfield {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

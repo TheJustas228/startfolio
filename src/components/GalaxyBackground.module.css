@@ -1,0 +1,117 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.baseGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 20%, rgba(61, 1, 188, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 120% at 80% 80%, rgba(106, 53, 255, 0.2) 0%, transparent 45%),
+    linear-gradient(180deg, #0D0628 0%, #0F044A 35%, #0B0520 70%, #060218 100%);
+}
+
+/* Nebula blobs — soft, diffused purple/blue */
+.nebula1 {
+  position: absolute;
+  top: 5%;
+  right: 15%;
+  width: 55%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(154, 18, 202, 0.18) 0%,
+    rgba(106, 53, 255, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(60px);
+}
+
+.nebula2 {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  width: 50%;
+  height: 45%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(106, 53, 255, 0.2) 0%,
+    rgba(61, 1, 188, 0.06) 50%,
+    transparent 75%
+  );
+  filter: blur(70px);
+}
+
+.nebula3 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 70%;
+  height: 50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(106, 53, 255, 0.12) 0%,
+    rgba(154, 18, 202, 0.05) 45%,
+    transparent 70%
+  );
+  filter: blur(80px);
+}
+
+.nebula4 {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 45%;
+  height: 35%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(138, 43, 226, 0.15) 0%,
+    transparent 60%
+  );
+  filter: blur(50px);
+}
+
+.nebula5 {
+  position: absolute;
+  bottom: 25%;
+  right: -5%;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(106, 53, 255, 0.14) 0%,
+    transparent 65%
+  );
+  filter: blur(55px);
+}
+
+.nebula6 {
+  position: absolute;
+  top: 60%;
+  right: 25%;
+  width: 35%;
+  height: 35%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(154, 18, 202, 0.12) 0%,
+    transparent 60%
+  );
+  filter: blur(45px);
+}
+
+.starfield {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

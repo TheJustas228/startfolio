@@ -1,0 +1,36 @@
+/* Cursor-following glow — behind content, fixed to viewport */
+.glowOrb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(154, 18, 202, 0.28) 0%,
+    rgba(106, 53, 255, 0.12) 30%,
+    rgba(61, 1, 188, 0.04) 55%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0.5;
+  transform: translate(-50%, -50%);
+  transition: left 0.08s ease-out,
+              top 0.08s ease-out;
+  will-change: left, top;
+}
+
+/* Hide on touch/mobile — only show for pointer (mouse) devices */
+@media (pointer: coarse), (hover: none) {
+  .glowOrb {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) and (pointer: fine) {
+  .glowOrb {
+    width: 700px;
+    height: 700px;
+  }
+}

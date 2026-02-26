@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.dot.active {
+  background: var(--secondary);
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(106, 53, 255, 0.5);
+}
+
+.label {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
