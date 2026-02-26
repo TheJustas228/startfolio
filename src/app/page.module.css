@@ -18,6 +18,19 @@
 
 .logoMark {
   margin-bottom: var(--space-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logoMark img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .title {

@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: 'StartFolio — Choose a diversified portfolio you can stick with',
   description:
     'StartFolio helps new investors choose a simple, diversified long-term portfolio without jargon, hype, or stock-picking recommendations.',
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({
