@@ -1,0 +1,132 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  position: relative;
+  background: var(--bg);
+}
+
+.container {
+  width: 100%;
+  max-width: 580px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2xl);
+}
+
+.questionCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-xl);
+}
+
+.questionText {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-xl);
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 20px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  line-height: 1.4;
+}
+
+.option:hover {
+  border-color: var(--secondary);
+  background: rgba(106, 53, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.optionActive {
+  border-color: var(--secondary);
+  background: rgba(106, 53, 255, 0.12);
+  color: var(--text-primary);
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(106, 53, 255, 0.15);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Result screen */
+.resultCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl) var(--space-xl);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.resultIcon {
+  margin-bottom: var(--space-lg);
+}
+
+.resultTitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+.portfolioName {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-lg);
+}
+
+.resultExplanation {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-2xl);
+}
+
+.resultActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+@media (max-width: 480px) {
+  .questionCard {
+    padding: var(--space-lg);
+  }
+
+  .resultCard {
+    padding: var(--space-lg);
+  }
+}
