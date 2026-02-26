@@ -1,1 +1,47 @@
+# Dependencies
 node_modules
+.pnp
+.pnp.js
+
+# Build / output
+.next
+out
+build
+dist
+*.tsbuildinfo
+.turbo
+
+# Environment (never commit secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Debug and logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Vercel
+.vercel
+
+# Testing
+coverage
+.nyc_output
+
+# Optional (uncomment if you use them)
+# .cursor
