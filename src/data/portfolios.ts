@@ -9,7 +9,7 @@
  *   - computeBacktestMetrics(weights, returns) for real historical performance
  *   - computeCovarianceMatrix(returns) for portfolio-level risk analytics
  *   - computeBeta(portfolioReturns, marketReturns) for market sensitivity
- * See /developer-notes for the full interface definitions.
+ * See src/lib/metrics.ts for the full interface definitions.
  */
 
 import { AssetClassKey } from './assetClasses';

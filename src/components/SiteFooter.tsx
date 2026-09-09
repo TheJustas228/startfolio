@@ -32,7 +32,6 @@ export default function SiteFooter() {
             </div>
             <div className={styles.column}>
               <h2 className={styles.columnTitle}>Project</h2>
-              <Link href="/developer-notes">Developer notes</Link>
               <Link href="/#under-the-hood">Under the hood</Link>
               <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
                 Source on GitHub ↗

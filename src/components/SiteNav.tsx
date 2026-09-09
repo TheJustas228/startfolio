@@ -17,7 +17,6 @@ const LINKS = [
   { href: '/portfolios', label: 'Portfolios' },
   { href: '/#how-it-works', label: 'How it works' },
   { href: '/#under-the-hood', label: 'Under the hood' },
-  { href: '/developer-notes', label: 'Developer notes' },
 ];
 
 export default function SiteNav() {

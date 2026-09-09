@@ -13,7 +13,8 @@
  *   - Quandl / Nasdaq Data Link for commodities indices
  *   - Portfolio Visualizer API for backtested statistics
  * The function `getReturns(asset, startDate, endDate)` defined in
- * the developer-notes types should replace these constants.
+ * should replace these constants; see the interface sketch in
+ * src/lib/metrics.ts.
  */
 
 export type AssetClassKey =

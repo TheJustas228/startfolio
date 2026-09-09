@@ -56,14 +56,14 @@ The app is set up for [Vercel](https://vercel.com): connect your GitHub repo and
 
 ## Project structure
 
-- `src/app/` — Routes: landing, onboarding, portfolios, portfolio detail, customize, summary, developer-notes
+- `src/app/` — Routes: landing, onboarding, portfolios, portfolio detail, customize, summary
 - `src/components/` — Shared UI (site nav and footer, hero preview, allocation chart, portfolio cards, cursor glow, backgrounds)
 - `src/hooks/` — `useReducedMotion` (single source of truth for motion preference)
 - `src/context/` — App state (onboarding answers, selected portfolio, slider)
 - `src/data/` — Portfolios, questions, asset classes
 - `src/lib/` — Slider logic with guardrails, illustrative metrics
 
-For more on data integration points, theme tokens, and risk-score mapping, see the **Developer Notes** page in the app (`/developer-notes`) or the comments in the codebase.
+Data integration points, risk-score mapping, and the slider guardrails are documented in the comments at the top of `src/lib/metrics.ts`, `src/lib/sliderLogic.ts`, and `src/data/questions.ts`.
 
 ## Notes on the build
 

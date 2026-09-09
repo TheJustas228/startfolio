@@ -208,14 +208,11 @@ export default function LandingPage() {
         </div>
 
         <div className={styles.hoodActions}>
-          <Link href="/developer-notes" className="btn btn-secondary">
-            Read the developer notes
-          </Link>
           <a
             href={REPO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-ghost"
+            className="btn btn-secondary"
           >
             View the source ↗
           </a>

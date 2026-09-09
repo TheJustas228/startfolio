@@ -3,8 +3,8 @@
  *
  * Each question has options with associated risk-score points.
  * The total risk score ranges from 0 (most conservative) to 100
- * (most growth-oriented). See the Developer Notes page for the
- * complete mapping documentation.
+ * (most growth-oriented). The complete mapping is documented in
+ * the Risk Score Mapping comment below.
  *
  * --- Risk Score Mapping ---
  * Each answer contributes 0–25 points (5 questions × 25 max = 125 possible,
