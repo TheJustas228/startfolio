@@ -1,0 +1,7 @@
+# Keep line endings stable across Windows and WSL checkouts.
+# Without this the tree drifts to CRLF and every file reads as fully rewritten.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary
