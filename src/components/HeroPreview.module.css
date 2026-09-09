@@ -1,0 +1,231 @@
+.frame {
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(180deg, rgba(26, 20, 66, 0.72) 0%, rgba(16, 8, 48, 0.72) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(106, 53, 255, 0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+/* ---------- Window chrome ---------- */
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+  background: rgba(6, 2, 24, 0.4);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.chromeLabel {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  gap: 6px;
+  padding: var(--space-md) var(--space-md) 0;
+  flex-wrap: wrap;
+}
+
+.tab {
+  flex: 1 1 auto;
+  padding: 6px 10px;
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--transition-fast), border-color var(--transition-fast),
+              background var(--transition-fast);
+}
+.tab:hover { color: var(--text-secondary); }
+
+.tabActive {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- Donut + rows ---------- */
+.body {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-md);
+}
+
+.chartWrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.donut {
+  width: 140px;
+  height: 140px;
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-width: 16;
+}
+
+.segment {
+  fill: none;
+  stroke-width: 16;
+  transition: stroke-dasharray var(--transition-slow),
+              stroke-dashoffset var(--transition-slow);
+}
+
+.donutCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.donutValue {
+  font-size: var(--font-size-2xl);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.donutLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.details { min-width: 0; flex: 1; }
+
+.portfolioName {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.rows {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-xs);
+}
+
+.swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rowName {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowWeight {
+  margin-left: auto;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Metric strip ---------- */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border-light);
+}
+
+.metric {
+  padding: var(--space-md) var(--space-sm);
+  text-align: center;
+  border-right: 1px solid var(--border-light);
+}
+.metric:last-child { border-right: none; }
+
+.metricLabel {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.metricValue {
+  display: block;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Footer ---------- */
+.previewFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 10px var(--space-md);
+  border-top: 1px solid var(--border-light);
+  background: rgba(6, 2, 24, 0.35);
+}
+
+.illustrative {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.previewLink {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+.previewLink:hover { color: var(--text-primary); }
+
+@media (max-width: 420px) {
+  .body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .chartWrap { align-self: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .segment { transition: none; }
+}

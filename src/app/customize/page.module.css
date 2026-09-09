@@ -1,5 +1,6 @@
 .main {
-  min-height: 100vh;
+  /* Nav and footer are shared chrome; leave room for both. */
+  min-height: calc(100vh - 73px);
   padding-bottom: var(--space-3xl);
 }
 

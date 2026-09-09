@@ -1,17 +1,19 @@
 .main {
-  min-height: 100vh;
+  /* Nav and footer are shared chrome; leave room for both. */
+  min-height: calc(100vh - 73px);
   padding-bottom: var(--space-3xl);
-}
-
-.header {
-  padding-top: var(--space-lg);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* Exactly four cards: 2x2 keeps asset names on one line. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-lg);
   margin-bottom: var(--space-2xl);
+}
+
+@media (max-width: 720px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 .footerNote {

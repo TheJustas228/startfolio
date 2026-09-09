@@ -26,6 +26,8 @@ export type AssetClassKey =
 export interface AssetClass {
   key: AssetClassKey;
   name: string;
+  /** Compact label for dense UI — legends, chips, inline weight lists */
+  shortName: string;
   shortDescription: string;
   detailedExplanation: string;
   exampleETFs: { ticker: string; note: string }[];
@@ -41,6 +43,7 @@ export const ASSET_CLASSES: Record<AssetClassKey, AssetClass> = {
   globalStocks: {
     key: 'globalStocks',
     name: 'Global Stocks',
+    shortName: 'Stocks',
     shortDescription:
       'Broad diversified equities across regions and sectors — the long-term growth engine.',
     detailedExplanation:
@@ -58,6 +61,7 @@ export const ASSET_CLASSES: Record<AssetClassKey, AssetClass> = {
   govBonds: {
     key: 'govBonds',
     name: 'Intermediate Government Bonds',
+    shortName: 'Gov bonds',
     shortDescription:
       'High-quality government bonds with intermediate duration — the stability ballast.',
     detailedExplanation:
@@ -75,6 +79,7 @@ export const ASSET_CLASSES: Record<AssetClassKey, AssetClass> = {
   inflationBonds: {
     key: 'inflationBonds',
     name: 'Inflation-Protected Bonds',
+    shortName: 'Inflation bonds',
     shortDescription:
       'Bonds whose principal adjusts with inflation — purchasing-power protection.',
     detailedExplanation:
@@ -92,6 +97,7 @@ export const ASSET_CLASSES: Record<AssetClassKey, AssetClass> = {
   commodities: {
     key: 'commodities',
     name: 'Commodities',
+    shortName: 'Commodities',
     shortDescription:
       'Broad commodities exposure — may help in some inflationary regimes but very volatile.',
     detailedExplanation:
@@ -109,6 +115,7 @@ export const ASSET_CLASSES: Record<AssetClassKey, AssetClass> = {
   cash: {
     key: 'cash',
     name: 'Cash / Money Market',
+    shortName: 'Cash',
     shortDescription:
       'Very low volatility liquidity — stability and optionality at the cost of low long-run returns.',
     detailedExplanation:

@@ -51,6 +51,7 @@
   color: var(--text-secondary);
   margin-bottom: var(--space-lg);
   line-height: 1.5;
+  min-height: calc(2 * 1.5em);
 }
 
 .allocations {

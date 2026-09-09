@@ -1,0 +1,127 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: background var(--transition-normal),
+              border-color var(--transition-normal),
+              backdrop-filter var(--transition-normal);
+}
+
+/* Only tint the bar once the page has moved, so the hero stays clean.
+   An open mobile menu gets the same treatment so bar and panel match. */
+.scrolled,
+.header:has(.linksOpen) {
+  background: rgba(9, 5, 26, 0.72);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom-color: var(--border-light);
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin-right: auto;
+}
+.brand:hover { color: var(--text-primary); }
+
+.brandMark {
+  border-radius: 9px;
+  display: block;
+}
+
+.brandName {
+  font-size: var(--font-size-lg);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.link {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+.link:hover { color: var(--text-primary); }
+
+.linkActive { color: var(--text-primary); }
+
+.cta { margin-left: var(--space-sm); }
+
+.menuButton {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  line-height: 1;
+}
+.menuButton:hover { border-color: var(--secondary); }
+
+.menuIcon { display: block; }
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .menuButton { display: inline-flex; }
+
+  .links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-sm) var(--space-lg) var(--space-lg);
+    background: rgba(9, 5, 26, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-light);
+    display: none;
+  }
+
+  .linksOpen { display: flex; }
+
+  .link {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: var(--font-size-base);
+  }
+
+  .cta {
+    margin: var(--space-md) 0 0;
+    width: 100%;
+  }
+}

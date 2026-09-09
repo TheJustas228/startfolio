@@ -106,6 +106,8 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -124,6 +126,32 @@ body {
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page content grows so the shared footer always sits at the bottom */
+#main-content {
+  flex: 1 0 auto;
+}
+
+/* Keyboard-only escape hatch past the navigation */
+.skip-link {
+  position: absolute;
+  left: var(--space-md);
+  top: -100px;
+  z-index: 100;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--secondary);
+  color: var(--text-primary);
+  font-weight: 700;
+  transition: top var(--transition-fast);
+}
+.skip-link:focus {
+  top: var(--space-md);
+  color: var(--text-primary);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -428,4 +456,20 @@ details summary::-webkit-details-marker {
   .card {
     padding: var(--space-lg);
   }
+}
+
+
+/* ---------- Reduced motion ----------
+   Honour the OS setting: keep hover/focus feedback, drop the movement.
+   Decorative layers that only exist to move are hidden outright. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .btn:hover { transform: none; }
 }

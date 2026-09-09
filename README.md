@@ -11,7 +11,9 @@ StartFolio is a beginner-friendly investing web app that helps new investors pic
 - **Customization** — Single “Safety ↔ Growth” slider with strict diversification guardrails; optional inflation diversifiers
 - **Transparent content** — Per-portfolio sections on what each part does, what can go wrong, common mistakes, and time-horizon guidance
 - **Illustrative metrics** — Placeholder volatility and worst-year estimates (clearly labeled); structure in place to plug in real historical data later
+- **Marketing landing page** — Hero with a live product preview that renders the real portfolio data through the real metrics engine, so it cannot drift from the app
 - **Galaxy-style UI** — Deep purple theme, cursor-following glow (desktop only), and optional “space with stars” background on inner pages
+- **Accessible by default** — Shared sticky nav with a keyboard skip link, visible focus rings, and full `prefers-reduced-motion` support (the cursor glow and the auto-rotating preview both stand down)
 
 ## Tech stack
 
@@ -55,12 +57,19 @@ The app is set up for [Vercel](https://vercel.com): connect your GitHub repo and
 ## Project structure
 
 - `src/app/` — Routes: landing, onboarding, portfolios, portfolio detail, customize, summary, developer-notes
-- `src/components/` — Shared UI (e.g. allocation chart, portfolio cards, cursor glow, backgrounds)
+- `src/components/` — Shared UI (site nav and footer, hero preview, allocation chart, portfolio cards, cursor glow, backgrounds)
+- `src/hooks/` — `useReducedMotion` (single source of truth for motion preference)
 - `src/context/` — App state (onboarding answers, selected portfolio, slider)
 - `src/data/` — Portfolios, questions, asset classes
 - `src/lib/` — Slider logic with guardrails, illustrative metrics
 
 For more on data integration points, theme tokens, and risk-score mapping, see the **Developer Notes** page in the app (`/developer-notes`) or the comments in the codebase.
+
+## Notes on the build
+
+- Domain logic lives in `src/lib/` and is pure — the slider runs through a deterministic interpolation with hard diversification constraints, and portfolio volatility uses the full covariance formula rather than a weighted average.
+- Portfolios, asset classes, and questionnaire scoring are typed data modules, so adding a portfolio is a data change and every screen (including the landing page) follows automatically.
+- Illustrative figures are labelled as such wherever they appear, and each portfolio ships with "what can go wrong" and "common mistakes" alongside the upside.
 
 ## Disclaimer
 

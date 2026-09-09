@@ -1,26 +1,19 @@
-'use client';
-
 /**
  * Developer Notes page — documents architecture, data integration points,
  * theme tokens, risk score mapping, and future API interfaces.
+ *
+ * Purely static content, so this renders as a server component.
  */
 
 import React from 'react';
-import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
 
-export default function DeveloperNotesPage() {
-  const router = useRouter();
+export const metadata = { title: 'Developer notes' };
 
+export default function DeveloperNotesPage() {
   return (
     <main className={styles.main}>
       <div className="container">
-        <div className={styles.topNav}>
-          <button className="btn btn-ghost btn-sm" onClick={() => router.push('/')}>
-            ← Home
-          </button>
-        </div>
-
         <h1 className={styles.title}>Developer Notes</h1>
         <p className={styles.subtitle}>
           Architecture reference for extending StartFolio with real data,
@@ -337,7 +330,12 @@ export function computeBeta(
 │   ├── AllocationTable.tsx      # Allocation table with bars
 │   ├── PortfolioCard.tsx        # Card for portfolio grid
 │   ├── StepIndicator.tsx        # Onboarding step dots
-│   └── ETFToggle.tsx            # Example ETFs accordion
+│   ├── ETFToggle.tsx            # Example ETFs accordion
+│   ├── SiteNav.tsx              # Shared sticky navigation
+│   ├── SiteFooter.tsx           # Shared footer + disclaimer
+│   └── HeroPreview.tsx          # Landing preview (real data, SVG donut)
+├── hooks/
+│   └── useReducedMotion.ts      # prefers-reduced-motion listener
 ├── context/
 │   └── AppContext.tsx            # Global state (React Context)
 ├── data/

@@ -23,16 +23,6 @@ export default function PortfoliosPage() {
   return (
     <main className={styles.main}>
       <div className="container-wide">
-        {/* Header */}
-        <div className={styles.header}>
-          <button
-            className="btn btn-ghost btn-sm"
-            onClick={() => router.push('/')}
-          >
-            ← Home
-          </button>
-        </div>
-
         <div className="page-header">
           <h1>Model Portfolios</h1>
           <p>
